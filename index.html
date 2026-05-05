@@ -294,7 +294,6 @@
             margin-top: 4rem;
         }
 
-        
         .qa-section h2 {
             font-family: 'Orbitron', sans-serif;
             color: var(--secondary-color);
@@ -444,14 +443,14 @@
                             <p>探討波速隨方向變化的物理現象。</p>
                         </div>
                     </div>
-                    <div class="nav-card" onclick="alert('內容建置中...')">
+                    <div class="nav-card" onclick="showChapter('3_7')">
                         <div class="card-content">
                             <span class="chapter-num">3.7</span>
                             <h3>衰減與非彈性</h3>
-                            <p>能量在地球介質中的耗散與影響。</p>
+                            <p>地震能量如何隨時間與距離消散。</p>
                         </div>
                     </div>
-                    <div class="nav-card" onclick="alert('內容建置中...')">
+                    <div class="nav-card" onclick="showChapter('3_8')">
                         <div class="card-content">
                             <span class="chapter-num">3.8</span>
                             <h3>地函與地核的組成</h3>
@@ -970,10 +969,97 @@
                     3.6 節揭示了地球構造中比層狀分佈更細緻的一面。非均向性的存在打破了簡單的球對稱假設，為我們提供了一種觀察地球內部動力學過程的立體視角，是連結礦物物理與全球動力學的重要橋樑。
                 </p>
             </div>
+
+            <!-- Content for 3.7 -->
+            <div id="content-3_7" style="display:none">
+                <header>
+                    <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">3.7 衰減與非彈性 (Attenuation and Anelasticity)</h1>
+                </header>
+
+                <h2>核心概念概述</h2>
+                <p>
+                    在理想彈性地球模型中，地震能量是守恆的；但在真實地球中，地震波在傳播過程中振幅會逐漸減小，這種現象稱為衰減（Attenuation）。3.7 節探討了導致衰減的各種物理機制。
+                </p>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20230557.png" alt="地震波衰減示意圖">
+                    <p class="image-caption">圖 3.7.1：地震波隨時間與距離的衰減特徵。展示了波形振幅如何因介質的非彈性吸收與幾何擴散而指數級減小。高頻成分通常比低頻成分衰減得更快，導致波形隨距離增加而變得「遲鈍」。</p>
+                </div>
+
+                <h2>振幅減小的四大機制</h2>
+                <ul>
+                    <li><span class="highlight">幾何擴散 (Geometric Spreading)</span>：能量隨波前擴張而稀釋。體波振幅隨距離 1/r 減小。</li>
+                    <li><span class="highlight">散射 (Scattering)</span>：波遇到不均勻體向各方向反射，形成主波後的「尾波」(Coda)。</li>
+                    <li><span class="highlight">多路徑效應</span>：由側向速度變化導致的能量聚焦或發散。</li>
+                    <li><span class="highlight">非彈性吸收 (Intrinsic Attenuation)</span>：真正的能量損失，透過內摩擦轉化為熱能。</li>
+                </ul>
+
+                <h2>品質因子 Q (Quality Factor)</h2>
+                <p>
+                    地震學家使用 <span class="highlight">Q</span> 來量化非彈性程度。Q 越高表示物質越接近彈性（衰減小）；Q 越低表示物質越偏向粘彈性（衰減大，如軟流圈）。
+                </p>
+
+                <h2>地球內部的 Q 分佈</h2>
+                <ul>
+                    <li><strong>軟流圈 (LVZ)</strong>：低 Q 值帶，與高溫及部分熔融有關。</li>
+                    <li><strong>俯衝板塊</strong>：寒冷且剛硬，具有極高 Q 值，波傳播效率極高。</li>
+                    <li><strong>地核</strong>：外核對 P 波基本無衰減。</li>
+                </ul>
+
+                <h2>研究意義</h2>
+                <p>
+                    衰減對溫度極為敏感，因此「衰減斷層掃描」是探測地球內部熱狀態（如岩漿庫、地函熱柱）比波速分析更靈敏的工具。
+                </p>
+
+                <h2>總結</h2>
+                <p>
+                    3.7 節強調了地球並非完美的彈性體。衰減不僅影響紀錄品質，更隱含了溫度、流體與物質狀態的重要資訊。
+                </p>
+            <!-- Content for 3.8 -->
+            <div id="content-3_8" style="display:none">
+                <header>
+                    <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">3.8 地函與地核的成分 (Composition of the Mantle and the Core)</h1>
+                </header>
+
+                <h2>核心概念概述</h2>
+                <p>
+                    3.8 節結合了地震波速、密度、轉動慣量以及實驗礦物物理學，探討地球內部的物質組成。透過地震學提供的「物理邊界」，科學家得以推斷出地函與地核的化學成分與熱狀態。
+                </p>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20230638.png" alt="地球分層與成分示意圖">
+                    <p class="image-caption">圖 3.8.1：地球內部徑向構造與物理化學分層。展示了從地殼到地心的密度與波速隨深度變化，並標註了 410km、660km 等關鍵不連續面以及核幔邊界 (CMB) 的物質組成差異。</p>
+                </div>
+
+                <h2>地球密度與轉動慣量</h2>
+                <ul>
+                    <li><span class="highlight">平均密度</span>：地球平均密度約為 5.5 g/cm³，遠高於地表岩石，證明地球中心存在高密度的核。</li>
+                    <li><span class="highlight">轉動慣量</span>：地球比值約 0.33（小於均勻球體的 0.4），顯示質量高度向地心集中。</li>
+                    <li><span class="highlight">Adams-Williamson 方程</span>：利用地震參數推算密度隨深度的變化。</li>
+                </ul>
+
+                <h2>地函的組成：礦物相變</h2>
+                <p>地函主要由 <span class="highlight">橄欖岩 (Pyrolite)</span> 組成，隨深度增加會發生關鍵相變：</p>
+                <ul>
+                    <li><strong>410 km</strong>：橄欖石相變為瓦茲利石 (Wadsleyite)。</li>
+                    <li><strong>660 km</strong>：林伍德石分解為鈣鈦礦 (Perovskite) 與方鎂鐵礦，這是上/下地函的分界。</li>
+                </ul>
+
+                <h2>地核的組成與演化</h2>
+                <ul>
+                    <li><span class="highlight">化學成分</span>：主要由鐵和鎳組成，並含有 10-15% 的輕元素（如硫、矽、氧）。</li>
+                    <li><span class="highlight">內核與外核</span>：外核為液態，內核為固態。內核的生長釋放潛熱與重力位能，驅動磁場產生。</li>
+                    <li><span class="highlight">D" 層</span>：核幔邊界的複雜過渡帶，可能堆積了俯衝板塊的殘餘物。</li>
+                </ul>
+
+                <h2>總結</h2>
+                <p>
+                    3.8 節將地震觀測提升到了化學與熱力學層次。地球內部的層序不僅是速度的跳躍，更是物質在極端壓力與溫度下發生相變與化學反應的結果。
+                </p>
+            </div>
         </div>
     </div>
 
-    
     <footer>
         <p>&copy; 2026 地震學互動教學網頁 - 基於課程摘要製作</p>
     </footer>
