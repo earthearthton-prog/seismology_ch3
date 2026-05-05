@@ -429,14 +429,14 @@
                             <p>考慮地球曲率的地震波傳遞規律。</p>
                         </div>
                     </div>
-                    <div class="nav-card" onclick="alert('內容建置中...')">
+                    <div class="nav-card" onclick="showChapter('3_5')">
                         <div class="card-content">
                             <span class="chapter-num">3.5</span>
                             <h3>體波走時研究</h3>
                             <p>透過抵達時間精確定位震源與構造。</p>
                         </div>
                     </div>
-                    <div class="nav-card" onclick="alert('內容建置中...')">
+                    <div class="nav-card" onclick="showChapter('3_6')">
                         <div class="card-content">
                             <span class="chapter-num">3.6</span>
                             <h3>非均向性地球構造</h3>
@@ -879,6 +879,94 @@
                 <h2>總結</h2>
                 <p>
                     3.4 節建立了全球地震學的數學骨架。透過將射線理論與球形幾何結合，科學家不僅能預測波在地球深部的傳播軌跡，更能利用地表的觀測數據，「看穿」數千公里深的地下世界。
+                </p>
+            </div>
+
+            <!-- Content for 3.5 -->
+            <div id="content-3_5" style="display:none">
+                <header>
+                    <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">3.5 體波走時研究 (Body Wave Travel Time Studies)</h1>
+                </header>
+
+                <h2>核心概念概述</h2>
+                <p>
+                    3.5 節探討如何透過全球地震紀錄中的體波（Body Waves）走時，建立地球內部的徑向速度模型。從早期的 JB 模型到現代的 IASP91 與 PREM 模型，地震學家精確劃分了地球內部各層的界限。
+                </p>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20224828.png" alt="全球地震波相示意圖">
+                    <p class="image-caption">圖 3.5.1：全球地震波相 (Seismic Phases) 傳播路徑。展示了 P、S、PKP、SKS 等波相在地球內部的複雜路徑，包括在核幔邊界 (CMB) 的反射與折射，以及在外核與內核中的傳播特徵。</p>
+                </div>
+
+                <h2>體波相命名法</h2>
+                <p>地震學家使用特定字母組合來描述波在地球內部的路徑：</p>
+                <ul>
+                    <li><span class="highlight">P / S</span>：地函中的壓縮波 / 剪力波。</li>
+                    <li><span class="highlight">K</span>：通過液態外核的 P 波。</li>
+                    <li><span class="highlight">I / J</span>：通過固態內核的 P 波 / S 波。</li>
+                    <li><span class="highlight">c / i</span>：分別代表在核幔邊界 (CMB) 與內外核邊界 (ICB) 的反射。</li>
+                </ul>
+
+                <h2>地球內部構造特徵</h2>
+                <ul>
+                    <li><span class="highlight">轉變帶 (Transition Zone)</span>：位於 410 公里與 660 公里深處，因礦物相變導致波速不連續。</li>
+                    <li><span class="highlight">D" 層</span>：地函底部的極度不均勻區域，是研究地函對流與化學作用的重點。</li>
+                    <li><span class="highlight">核心陰影區</span>：由於地核波速較低，103° 至 143° 之間形成了 P 波無法直接抵達的陰影區。</li>
+                </ul>
+
+                <h2>重要現象</h2>
+                <p>
+                    1. <strong>費馬原理</strong>：解釋了為何地震波總是沿著走時極值的路徑傳播。<br>
+                    2. <strong>對蹠點聚焦</strong>：在 180° 對蹠點，地震波匯聚產生極大能量。<br>
+                    3. <strong>前兆訊號 (Precursors)</strong>：揭示了地核邊界不均勻體造成的散射現象。
+                </p>
+
+                <h2>總結</h2>
+                <p>
+                    3.5 節是本章最核心的部分，將理論轉化為對地球真實結構的理解。透過對成千上萬條路徑的分析，人類得以描繪出地心深處的固液態分層與動力特徵。
+                </p>
+            </div>
+
+            <!-- Content for 3.6 -->
+            <div id="content-3_6" style="display:none">
+                <header>
+                    <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">3.6 非均向性地球結構 (Anisotropic Earth Structure)</h1>
+                </header>
+
+                <h2>核心概念概述</h2>
+                <p>
+                    非均向性（Anisotropy）是指地震波的傳播速度隨方向而改變的現象。雖然在建立全球徑向模型時，通常假設地球是等向性的，但實際觀測顯示，地球許多區域具有顯著的非均向性。
+                </p>
+
+                <h2>非均向性的成因</h2>
+                <ul>
+                    <li><span class="highlight">形狀優先取向 (SPO)</span>：由微細分層（如沉積岩）或定向排列的裂隙造成。</li>
+                    <li><span class="highlight">晶格優先取向 (LPO)</span>：由礦物晶體（如橄欖石）在應力作用下定向排列造成，是地函非均向性的主因。</li>
+                </ul>
+
+                <h2>剪力波分裂 (Shear Wave Splitting)</h2>
+                <p>這是研究非均向性最直接的手段。當剪力波進入非均向性介質時，會分裂成快、慢兩分量。</p>
+                
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20225334.png" alt="剪力波分裂示意圖">
+                    <p class="image-caption">圖 3.6.1：剪力波分裂 (Shear Wave Splitting) 物理模型。展示了一道 S 波在進入非均向性介質後，分裂成振動方向互相垂直且波速不同的快波與慢波。這被比喻為地震學中的「雙折射」現象。</p>
+                </div>
+
+                <ul>
+                    <li><span class="highlight">快軸方向 (φ)</span>：指示了物質的排列方向或地函流動方向。</li>
+                    <li><span class="highlight">延遲時間 (δt)</span>：反映了非均向性的強度。</li>
+                </ul>
+
+                <h2>地球內部的分佈</h2>
+                <ul>
+                    <li><strong>岩石圈與軟流圈</strong>：橄欖石沿板塊擴張方向排列。</li>
+                    <li><strong>D" 層</strong>：地函最底部區域，顯示強烈的水平非均向性。</li>
+                    <li><strong>內核</strong>：P 波沿地球自轉軸傳遞速度比沿赤道平面快約 3%。</li>
+                </ul>
+
+                <h2>總結</h2>
+                <p>
+                    3.6 節揭示了地球構造中比層狀分佈更細緻的一面。非均向性的存在打破了簡單的球對稱假設，為我們提供了一種觀察地球內部動力學過程的立體視角，是連結礦物物理與全球動力學的重要橋樑。
                 </p>
             </div>
         </div>
