@@ -415,7 +415,7 @@
                             <p>利用折射波探測地殼厚度與速度分佈。</p>
                         </div>
                     </div>
-                    <div class="nav-card" onclick="alert('內容建置中...')">
+                    <div class="nav-card" onclick="showChapter('3_3')">
                         <div class="card-content">
                             <span class="chapter-num">3.3</span>
                             <h3>反射地震學</h3>
@@ -791,6 +791,51 @@
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20215058.png" alt="地函模型">
                     <p class="image-caption">圖 3.2.23：地殼與地函邊界的細微構造。莫氏面有時並非銳利的界面，而是一個包含岩石熔融與混合的複雜過渡區，此模型揭示了這種漸變的速度構造如何影響地震波的反射特徵。</p>
                 </div>
+            </div>
+
+            <!-- Content for 3.3 -->
+            <div id="content-3_3" style="display:none">
+                <header>
+                    <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">3.3 反射地震學 (Reflection Seismology)</h1>
+                </header>
+
+                <h2>核心概念概述</h2>
+                <p>
+                    反射地震學主要利用地震波在地下界面反射回來的訊號，來精確探測地層的深度與結構。這項技術在石油與天然氣探勘中至關重要，因為它能提供地下構造的高解析度「影像」。
+                    與折射法不同，反射法專注於 <span class="highlight">亞臨界（Sub-critical）</span> 反射訊號，其數學處理與資料處理流程更為複雜。
+                </p>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20223424.png" alt="反射地震學原理">
+                    <p class="image-caption">圖 3.3.1：反射波射線路徑與走時關係。展示了地震波如何由源點發射，經過地層界面反射後被地表的接收器接收。其走時曲線呈現特徵性的雙曲線形狀。</p>
+                </div>
+
+                <h2>反射走時曲線與 NMO</h2>
+                <ul>
+                    <li><span class="highlight">雙曲線走時</span>：對於單一層均勻介質，反射波的走時曲線 T(x) 是一條雙曲線。</li>
+                    <li><span class="highlight">正常時差 (Normal Moveout, NMO)</span>：隨著震測偏移距（Offset）增加，反射走時會比垂直走時增加，這個差值稱為 NMO。</li>
+                    <li><span class="highlight">Dix 公式與層速度</span>：在多層模型中，反射走時曲線可以用「均方根速度」（RMS Velocity）來近似，並透過 Dix 公式推導出各層的「層速度」。</li>
+                </ul>
+
+                <h2>多頻道資料採集與處理</h2>
+                <p>
+                    現代反射探勘的核心在於 <span class="highlight">共同中點 (Common Midpoint, CMP)</span> 技術。透過 CMP 疊加 (Stacking)，將同一個中點但不同偏移距的訊號經過 NMO 校正後加總，能顯著提高訊號雜訊比 (SNR)。
+                </p>
+
+                <h2>訊號處理與移位 (Migration)</h2>
+                <p>
+                    為了獲得真實的地下影像，資料需要經過複雜的處理序列：
+                </p>
+                <ul>
+                    <li><strong>去捲積 (Deconvolution)</strong>：消除震源波形的影響，提高垂直解析度。</li>
+                    <li><strong>移位 (Migration)</strong>：這是反射處理中最關鍵的步驟。將反射點搬移到其真實的空間位置，解決傾斜界面或繞射現象造成的位置偏移。</li>
+                    <li><strong>靜態校正</strong>：補償地表環境造成的走時誤差。</li>
+                </ul>
+
+                <h2>總結</h2>
+                <p>
+                    3.3 節介紹了反射地震學從幾何光學路徑到複雜訊號處理的全貌。反射法不僅是一種測量深度的工具，更透過疊加、濾波與移位等數學手段，將雜亂的地震記錄轉化為清晰的地質切面。
+                </p>
             </div>
         </div>
     </div>
