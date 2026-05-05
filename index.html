@@ -1015,10 +1015,12 @@
                 <p>
                     3.7 節強調了地球並非完美的彈性體。衰減不僅影響紀錄品質，更隱含了溫度、流體與物質狀態的重要資訊。
                 </p>
+            </div>
+
             <!-- Content for 3.8 -->
             <div id="content-3_8" style="display:none">
                 <header>
-                    <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">3.8 地函與地核的成分 (Composition of the Mantle and the Core)</h1>
+                    <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">3.8 地函與地核的組成 (Composition of the Mantle and the Core)</h1>
                 </header>
 
                 <h2>核心概念概述</h2>
@@ -1027,34 +1029,34 @@
                 </p>
 
                 <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20230638.png" alt="地球分層與成分示意圖">
-                    <p class="image-caption">圖 3.8.1：地球內部徑向構造與物理化學分層。展示了從地殼到地心的密度與波速隨深度變化，並標註了 410km、660km 等關鍵不連續面以及核幔邊界 (CMB) 的物質組成差異。</p>
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20230638.png" alt="地球內部組成示意圖">
+                    <p class="image-caption">圖 3.8.1：地球內部圈層構造與物質組成概覽。展示了從地殼、地函（上地函、轉變帶、下地函）到地核（外核、內核）的深度分佈，以及各層主要的礦物組成與物理狀態（如液態外核與固態內核）。</p>
                 </div>
 
                 <h2>地球密度與轉動慣量</h2>
                 <ul>
-                    <li><span class="highlight">平均密度</span>：地球平均密度約為 5.5 g/cm³，遠高於地表岩石，證明地球中心存在高密度的核。</li>
+                    <li><span class="highlight">平均密度</span>：地球平均密度 (~5.5 g/cm³) 遠高於地表岩石 (~3 g/cm³)，證明地心存在高密度核。</li>
                     <li><span class="highlight">轉動慣量</span>：地球比值約 0.33（小於均勻球體的 0.4），顯示質量高度向地心集中。</li>
-                    <li><span class="highlight">Adams-Williamson 方程</span>：利用地震參數推算密度隨深度的變化。</li>
+                    <li><span class="highlight">Adams-Williamson 方程</span>：利用地震波速推算密度隨深度的變化。</li>
                 </ul>
 
                 <h2>地函的組成：礦物相變</h2>
-                <p>地函主要由 <span class="highlight">橄欖岩 (Pyrolite)</span> 組成，隨深度增加會發生關鍵相變：</p>
+                <p>地函主要由橄欖岩 (Pyrolite) 組成，其波速不連續面對應於關鍵的礦物相變：</p>
                 <ul>
                     <li><strong>410 km</strong>：橄欖石相變為瓦茲利石 (Wadsleyite)。</li>
-                    <li><strong>660 km</strong>：林伍德石分解為鈣鈦礦 (Perovskite) 與方鎂鐵礦，這是上/下地函的分界。</li>
+                    <li><strong>660 km</strong>：林伍德石分解為鈣鈦礦 (Perovskite) 與方鎂鐵礦。鈣鈦礦是下地函最主要的礦物。</li>
                 </ul>
 
                 <h2>地核的組成與演化</h2>
                 <ul>
                     <li><span class="highlight">化學成分</span>：主要由鐵和鎳組成，並含有 10-15% 的輕元素（如硫、矽、氧）。</li>
-                    <li><span class="highlight">內核與外核</span>：外核為液態，內核為固態。內核的生長釋放潛熱與重力位能，驅動磁場產生。</li>
-                    <li><span class="highlight">D" 層</span>：核幔邊界的複雜過渡帶，可能堆積了俯衝板塊的殘餘物。</li>
+                    <li><span class="highlight">能量動力</span>：內核的結晶釋放潛熱與重力位能，驅動外核對流並產生地球磁場。</li>
+                    <li><span class="highlight">D" 層</span>：核幔邊界處的複雜區域，可能存在俯衝板塊殘餘物。</li>
                 </ul>
 
                 <h2>總結</h2>
                 <p>
-                    3.8 節將地震觀測提升到了化學與熱力學層次。地球內部的層序不僅是速度的跳躍，更是物質在極端壓力與溫度下發生相變與化學反應的結果。
+                    3.8 節將地震觀測提升到了化學與熱力學的層次。地球內部的層序不僅是速度的跳躍，更是物質在極端壓力與溫度下發生相變、分異與化學反應的結果。
                 </p>
             </div>
         </div>
@@ -1144,7 +1146,6 @@
             }, 500 + index * 100);
         });
 
-        
         // Accordion Logic
         document.querySelectorAll('.accordion-header').forEach(header => {
             header.addEventListener('click', () => {
