@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地震學互動教學網頁 - 首頁</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <canvas id="seismic-bg"></canvas>
+        
+        <header>
+            <div class="container">
+                <h1 class="glitch" data-text="SEISMOLOGY">SEISMOLOGY</h1>
+                <p class="subtitle">地震學：探索地球內部的奧秘</p>
+            </div>
+        </header>
+
+        <main class="container">
+            <section id="overview" class="glass-card">
+                <h2>全課程大綱介紹</h2>
+                <p>
+                    地震學是探索地球內部「不可見」構造最重要的工具。透過精密分析地震波的抵達時間（Travel Times）與振幅，
+                    我們不僅能辨識地殼、地函與地核的重大界面，更能推斷地球內部的彈性性質、化學組成與熱狀態。
+                    本教學網頁將帶領你從基礎的簡介開始，深入探討折射與反射地震學，進而理解球形地球模型及地核、地函的奧秘。
+                </p>
+            </section>
+
+            <section id="navigation-grid">
+                <div class="grid">
+                    <!-- 3.1 -->
+                    <a href="chapter3_1.html" class="nav-card" id="card-3-1">
+                        <div class="card-content">
+                            <span class="chapter-num">3.1</span>
+                            <h3>簡介</h3>
+                            <p>地震學基本應用與地球分層構造概述。</p>
+                        </div>
+                    </a>
+                    <!-- 3.2 -->
+                    <a href="chapter3_2.html" class="nav-card" id="card-3-2">
+                        <div class="card-content">
+                            <span class="chapter-num">3.2</span>
+                            <h3>折射地震學</h3>
+                            <p>利用折射波探測地殼厚度與速度分佈。</p>
+                        </div>
+                    </a>
+                    <!-- 3.3 -->
+                    <a href="chapter3_3.html" class="nav-card" id="card-3-3">
+                        <div class="card-content">
+                            <span class="chapter-num">3.3</span>
+                            <h3>反射地震學</h3>
+                            <p>精密成像地球內部構造的關鍵技術。</p>
+                        </div>
+                    </a>
+                    <!-- 3.4 -->
+                    <a href="chapter3_4.html" class="nav-card" id="card-3-4">
+                        <div class="card-content">
+                            <span class="chapter-num">3.4</span>
+                            <h3>球形地球中的地震波</h3>
+                            <p>考慮地球曲率的地震波傳遞規律。</p>
+                        </div>
+                    </a>
+                    <!-- 3.5 -->
+                    <a href="chapter3_5.html" class="nav-card" id="card-3-5">
+                        <div class="card-content">
+                            <span class="chapter-num">3.5</span>
+                            <h3>體波走時研究</h3>
+                            <p>透過抵達時間精確定位震源與構造。</p>
+                        </div>
+                    </a>
+                    <!-- 3.6 -->
+                    <a href="chapter3_6.html" class="nav-card" id="card-3-6">
+                        <div class="card-content">
+                            <span class="chapter-num">3.6</span>
+                            <h3>非均向性地球構造</h3>
+                            <p>探討波速隨方向變化的物理現象。</p>
+                        </div>
+                    </a>
+                    <!-- 3.7 -->
+                    <a href="chapter3_7.html" class="nav-card" id="card-3-7">
+                        <div class="card-content">
+                            <span class="chapter-num">3.7</span>
+                            <h3>衰減與非彈性</h3>
+                            <p>能量在地球介質中的耗散與影響。</p>
+                        </div>
+                    </a>
+                    <!-- 3.8 -->
+                    <a href="chapter3_8.html" class="nav-card" id="card-3-8">
+                        <div class="card-content">
+                            <span class="chapter-num">3.8</span>
+                            <h3>地函與地核的組成</h3>
+                            <p>綜合數據解析地球深處的物質組成。</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 地震學互動教學網頁 - 基於課程摘要製作</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
