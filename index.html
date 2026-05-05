@@ -648,153 +648,148 @@
                 
                 <h2>核心概念概述</h2>
                 <p>
-                    折射地震學是利用地震波在地下界面發生 <span class="highlight">臨界折射（Critical Refraction）</span> 後的「頭波」（Head Wave）來推求地層速度與厚度的方法。
-                    這是地震學中最經典的正反演應用之一，廣泛應用於地殼構造研究及工程勘探。
+                    折射地震學是利用地震波在地下界面發生 <span class="highlight">臨界折射（Critical Refraction）</span> 後產生的「頭波」（Head Wave）來推求地層速度與厚度的方法。
+                    這是地震學中最早發展且最經典的正反演應用之一，對於理解地球各層（如地殼與地函）的物理性質至關重要。
                 </p>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214537.png" alt="折射原理圖">
-                    <p class="image-caption">圖 3.2.1：惠更斯原理與波前示意圖。展示了波如何從點波源向外擴散。</p>
+                    <p class="image-caption">圖 3.2.1：惠更斯原理 (Huygens' Principle)。說明波前上的每一點都可視為一個新的點子波源，這些子波的包絡面形成了下一時刻的新波前。這是理解波如何繞射與折射的基礎。</p>
                 </div>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214551.png" alt="射線路徑圖">
-                    <p class="image-caption">圖 3.2.2：斯乃爾定律 (Snell's Law) 示意圖。波在穿過不同速度界面時的彎曲現象。</p>
+                    <p class="image-caption">圖 3.2.2：斯乃爾定律 (Snell's Law) 的物理幾何。當地震波由低速層 (v1) 入射至高速層 (v2) 時，射線會偏離法線。臨界角 ic 定義為折射角達到 90 度時的入射角，滿足 sin(ic) = v1/v2。</p>
                 </div>
 
                 <h2>基本理論：平舖層模型 (Flat Layer Method)</h2>
                 <p>
-                    在最簡單的模型中，假設地球是由水平分層的均勻介質組成，且下層速度大於上地層速度（v1 > v0）。當震源在表面激發時，會產生三種主要的射線路徑：
+                    在最簡單的單層覆蓋模型中，我們假設地下由水平分層的均勻介質組成，且下層速度大於上層。這會產生三組關鍵波相，它們的競爭關係決定了我們在紀錄上看到的先後順序：
                 </p>
-                <ul>
-                    <li><span class="highlight">直接波 (Direct Wave)</span>：沿地表直接傳播，其走時曲線為過原點的直線，斜率為 1/v0。</li>
-                    <li><span class="highlight">反射波 (Reflected Wave)</span>：由界面反射回地面，其走時曲線為雙曲線。</li>
-                    <li><span class="highlight">頭波/折射波 (Head Wave)</span>：當入射角達到臨界角時，地震波沿界面下方傳播，其走時曲線為直線，斜率為 1/v1。</li>
-                </ul>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214609.png" alt="單層折射模型">
-                    <p class="image-caption">圖 3.2.3：單層覆蓋模型下的直接波、反射波與折射波路徑示意圖。</p>
+                    <p class="image-caption">圖 3.2.3：單層水平界面下的三種射線路徑。紅色代表沿表面傳播的「直接波」；藍色代表由界面反射的「反射波」；綠色則是在界面處以臨界角折射後，沿高速層頂部滑行並不斷輻射能量回地表的「頭波 (折射波)」。</p>
                 </div>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214633.png" alt="走時曲線">
-                    <p class="image-caption">圖 3.2.4：對應的走時曲線圖 (Travel-time curves)。可以看到直接波直線與折射波直線的交會點。</p>
+                    <p class="image-caption">圖 3.2.4：折射地震學的標準走時曲線 (Travel-time curve)。直接波是過原點的直線，斜率為 1/v1；折射波是斜率為 1/v2 的直線，其在時間軸上的截距 (Intercept) 可用來推算地層深度；反射波則是介於兩者之間的雙曲線。</p>
                 </div>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214653.png" alt="臨界角示意">
-                    <p class="image-caption">圖 3.2.5：臨界角與全反射現象的物理推導圖。</p>
+                    <p class="image-caption">圖 3.2.5：全反射與臨界折射的界線。此圖詳細推導了當波速發生突變時，波前如何在界面處發生形變，從而產生沿著界面傳播的頭波，這是折射勘探得以實施的物理前提。</p>
                 </div>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214709.png" alt="截距時間">
-                    <p class="image-caption">圖 3.2.6：截距時間 (Intercept Time) 的定義與幾何解釋。</p>
+                    <p class="image-caption">圖 3.2.6：截距時間 (Intercept Time) 的幾何推導。圖中展示了如何將折射波直線向左延伸至距離為 0 處，這個時間延遲代表了波在地殼內往返所消耗的額外時間，是計算地殼厚度的核心參數。</p>
                 </div>
 
-                <h2>莫氏不連續面 (The Moho)</h2>
+                <h2>莫氏不連續面 (The Moho Discontinuity)</h2>
                 <p>
-                    1909 年，莫霍洛維奇（A. Mohorovičić）透過分析地震折射數據，發現了地殼與地函的邊界。他觀察到兩組 P 波抵達：一組是沿地殼傳播的直接波（Pg），另一組是從較深的高速層（地函）折射回來的頭波（Pn）。
+                    地震學史上最重要的發現之一是地殼與地函邊界的確定。1909 年，莫霍洛維奇 (A. Mohorovičić) 觀察到來自巴爾幹半島的地震波紀錄具有異常特徵，這改變了我們對地球構造的認知。
                 </p>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214719.png" alt="Moho 發現">
-                    <p class="image-caption">圖 3.2.7：莫氏不連續面發現的歷史數據與走時分析示意圖。</p>
+                    <p class="image-caption">圖 3.2.7：莫氏當年觀測到的走時數據分析。圖中清晰顯示了兩組 P 波的分岔現象：Pg (地殼波) 與 Pn (地函折射波)。這證明了在地表下方數十公里處存在一個速度顯著增高的界面。</p>
                 </div>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214726.png" alt="Pn 波路徑">
-                    <p class="image-caption">圖 3.2.8：Pn 波與 Pg 波的傳播路徑對比圖。</p>
+                    <p class="image-caption">圖 3.2.8：Pn 波與 Pg 波的路徑對比。雖然 Pn 需要深入地函再折射回地表，但由於地函波速 (~8.1 km/s) 遠高於地殼波速 (~6.0 km/s)，在距離較遠時，Pn 反而會比 Pg 更早抵達接收站。</p>
                 </div>
 
-                <h2>複雜構造的處理</h2>
+                <h2>複雜構造的處理：多層與傾斜界面</h2>
                 <p>
-                    實際地下構造往往不是簡單的單層水平面，需要更複雜的模型處理：
+                    真實的地下構造並非總是單一且水平的。為了準確探測地下構造，我們需要處理多層介質以及傾斜的界面。
                 </p>
                 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214735.png" alt="多層模型">
-                    <p class="image-caption">圖 3.2.9：多層折射模型 (Multi-layered Model)。展示了波在多個界面間的傳播。</p>
+                    <p class="image-caption">圖 3.2.9：多層折射模型 (Multi-layered Model)。展示了當地下存在多個波速遞增的界面時，地震波如何在每一層發生臨界折射。每一層都會在走時曲線上產生一條對應的直線。</p>
                 </div>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214751.png" alt="多層公式">
-                    <p class="image-caption">圖 3.2.10：多層結構下的走時公式與數學推導過程。</p>
+                    <p class="image-caption">圖 3.2.10：多層構造下的走時推導公式。這組公式展示了如何利用各層的截距時間，遞迴地計算出每一層的真實厚度 z1, z2...zn。這是折射法定量解釋的數學核心。</p>
                 </div>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214805.png" alt="傾斜界面">
-                    <p class="image-caption">圖 3.2.11：傾斜界面模型 (Dipping Layer)。顯示了單向觀測會造成速度估計的誤差。</p>
+                    <p class="image-caption">圖 3.2.11：傾斜界面模型 (Dipping Layer)。如果地下界面不是水平的，我們觀測到的折射波斜率將不再是真實波速的倒數，而是「視速度」。單向觀測會導致巨大的深度估算誤差。</p>
                 </div>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214824.png" alt="反向觀測">
-                    <p class="image-caption">圖 3.2.12：反向觀測法 (Reversed Profiles) 示意圖，用於解算界面傾角。</p>
+                    <p class="image-caption">圖 3.2.12：反向觀測剖面 (Reversed Profiles)。為了解決傾斜界面問題，必須在測線的兩端分別擊發震源。上坡 (Up-dip) 方向的視速度會偏快，下坡 (Down-dip) 則偏慢，綜合兩者才能求出真速度與傾角。</p>
                 </div>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214834.png" alt="視速度公式">
-                    <p class="image-caption">圖 3.2.13：上坡與下坡方向的視速度計算公式。</p>
+                    <p class="image-caption">圖 3.2.13：傾斜界面下的視速度數學關係式。此處展示了如何透過幾何推導得出包含傾角 θ 的走時項。這是野外資料處理中最重要的修正公式之一。</p>
                 </div>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214848.png" alt="盲區示意">
-                    <p class="image-caption">圖 3.2.14：盲區 (Blind Zone) 現象示意。當薄層夾在中間時，其折射波不會成為首抵波。</p>
+                    <p class="image-caption">圖 3.2.14：盲區 (Blind Zone) 或是隱蔽層問題。如果地層太薄或是與上下層速度差異太小，該層的折射波可能永遠不會成為「首抵波」而被觀測到，這會導致對深度的低估。</p>
                 </div>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214900.png" alt="低速層">
-                    <p class="image-caption">圖 3.2.15：低速層 (Low-velocity Layer) 造成的射線彎曲與探測盲點示意。</p>
+                    <p class="image-caption">圖 3.2.15：低速層 (Low-velocity Layer, LVL) 的挑戰。當中間夾層速度低於上方時，波會向下彎曲而非發生臨界折射。折射法無法直接測得低速層速度，且會導致計算出的總深度偏大。</p>
                 </div>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214914.png" alt="複雜地表修正">
-                    <p class="image-caption">圖 3.2.16：地形與地表非均勻性對走時數據的影響與修正方法。</p>
+                    <p class="image-caption">圖 3.2.16：地表地形與風化層修正。在崎嶇的山區進行實驗時，各測站的高程差異會扭曲走時曲線。我們必須進行「靜力修正 (Static Corrections)」將數據投影到一個基準面上。</p>
                 </div>
 
-                <h2>振幅與合成地震圖</h2>
+                <h2>振幅分析與合成地震圖</h2>
                 <p>
-                    除了走時分析，振幅的變化也能提供重要資訊。合成地震圖（Synthetic Seismograms）被用來模擬複雜情況，以更精確地匹配觀測數據。
+                    除了分析抵達時間 (Travel Times)，波形的振幅與相位特徵同樣蘊含豐富的構造資訊。現代地震學透過數值模擬來精確比對實測資料。
                 </p>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214944.png" alt="振幅變化">
-                    <p class="image-caption">圖 3.2.17：隨距離變化的振幅衰減與波形特徵分析。</p>
+                    <p class="image-caption">圖 3.2.17：地震波振幅隨距離衰減的規律。除了幾何擴散外，能量也會因界面的反射與透射係數而改變。觀察振幅突變點可以幫助我們定位地殼內部的複雜構造。</p>
                 </div>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214959.png" alt="合成地震圖">
-                    <p class="image-caption">圖 3.2.18：合成地震圖示例，展示了理論預測與實際觀測的對比。</p>
+                    <p class="image-caption">圖 3.2.18：合成地震圖 (Synthetic Seismograms) 與觀測紀錄的對比。透過調整理論模型的速度與密度，直到模擬波形與實際紀錄吻合，這種「全波場反演」是目前最精確的研究手段。</p>
                 </div>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20215013.png" alt="能量分佈">
-                    <p class="image-caption">圖 3.2.19：射線追蹤與能量密度在介質中的分佈模擬圖。</p>
+                    <p class="image-caption">圖 3.2.19：射線追蹤模擬與能量強度分佈圖。顏色深淺代表能量在地層中的聚焦或散射。在某些高速層轉折處，能量會發生強烈的聚焦，導致地面觀測到異常強的振幅。</p>
                 </div>
 
-                <h2>地質意義與岩石性質</h2>
+                <h2>地球物理意義：岩石組成與區域構造</h2>
                 <p>
-                    折射法不僅是量尺，更是人類理解地球組成的手段。
+                    折射地震學最終的目的是推斷地球內部的化學組成與構造演化。
                 </p>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20215024.png" alt="海洋與大陸地殼">
-                    <p class="image-caption">圖 3.2.20：海洋與大陸地殼速度構造的對比圖。</p>
+                    <p class="image-caption">圖 3.2.20：海洋地殼與大陸地殼的速度剖面對比。可以看到海洋地殼薄且構造簡單，大陸地殼則厚且分層明顯，甚至具有中地殼的不連續面 (Conrad Discontinuity)。</p>
                 </div>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20215038.png" alt="岩石速度對比">
-                    <p class="image-caption">圖 3.2.21：不同類型岩石 (酸性、基性、超基性) 的地震波速範圍圖。</p>
+                    <p class="image-caption">圖 3.2.21：不同岩石類型的地震波速實驗數據。隨著二氧化矽含量的減少（由酸性變為超基性），岩石的波速會顯著提升。這為我們利用速度推測地下岩性提供了直接依據。</p>
                 </div>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20215050.png" alt="地殼剖面">
-                    <p class="image-caption">圖 3.2.22：區域性地殼構造剖面模型，結合了折射與重力數據。</p>
+                    <p class="image-caption">圖 3.2.22：區域性地殼構造演化剖面。展示了在造山帶下方，莫氏面如何向下深陷形成「山根 (Mountain Root)」。這是利用折射法與重力資料共同構建的結果。</p>
                 </div>
 
                 <div class="image-container">
                     <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20215058.png" alt="地函模型">
-                    <p class="image-caption">圖 3.2.23：地函頂部與地殼底部過渡帶的速度梯度模型。</p>
+                    <p class="image-caption">圖 3.2.23：地殼與地函邊界的細微構造。莫氏面有時並非銳利的界面，而是一個包含岩石熔融與混合的複雜過渡區，此模型揭示了這種漸變的速度構造如何影響地震波的反射特徵。</p>
                 </div>
             </div>
         </div>
