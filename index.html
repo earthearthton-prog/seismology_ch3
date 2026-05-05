@@ -289,6 +289,71 @@
             font-weight: bold;
         }
 
+        /* Q&A Accordion Styles */
+        .qa-section {
+            margin-top: 4rem;
+        }
+
+        .qa-section h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .accordion-item {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .accordion-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            transition: background 0.3s;
+        }
+
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .accordion-header::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .accordion-item.active .accordion-header::after {
+            transform: rotate(45deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            padding: 0 1.5rem;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 1000px;
+            padding: 1rem 1.5rem 2rem;
+        }
+
         footer {
             text-align: center;
             padding: 4rem 0;
@@ -390,6 +455,128 @@
                             <span class="chapter-num">3.8</span>
                             <h3>地函與地核的組成</h3>
                             <p>綜合數據解析地球深處的物質組成。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="qa-section glass-card">
+                <h2>地震學核心問答 (Q&A)</h2>
+                <div class="accordion">
+                    <!-- Q1 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">1. Pg、Pn、PmP 說明</div>
+                        <div class="accordion-content">
+                            <ul>
+                                <li><strong>Pg</strong>：沿地殼內部傳播的直接 P 波。在短距離內最先抵達。</li>
+                                <li><strong>Pn</strong>：在地函頂部發生臨界折射的頭波 (Head Wave)。當距離超過交叉距離時，會成為首抵波。</li>
+                                <li><strong>PmP</strong>：在莫氏不連續面 (Moho) 發生反射的 P 波。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Q2 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">2. 如何發現 Moho 面 ?</div>
+                        <div class="accordion-content">
+                            1909 年由莫霍洛維奇 (A. Mohorovičić) 發現。他分析地震紀錄時，發現在特定距離外會出現兩組 P 波抵達（Pg 與 Pn），意識到下層（地函）速度比地殼快，進而確立了地殼與地函的邊界。
+                        </div>
+                    </div>
+                    <!-- Q3 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">3. 全球 Moho 面的深度分布 ?</div>
+                        <div class="accordion-content">
+                            海洋地殼較薄且均勻，深度約 7 km；大陸地殼平均 35-40 km；山脈地區最厚可達 70-80 km（具有明顯的地殼根構造）。
+                        </div>
+                    </div>
+                    <!-- Q4 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">4. 甚麼是 ray parameter (射線參數) ?</div>
+                        <div class="accordion-content">
+                            射線參數 p 是描述地震波路徑的核心常數。在水平分層介質中 p = sin(i)/v，代表射線在傳播過程中的「不變量」。
+                        </div>
+                    </div>
+                    <!-- Q5 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">5. 為何地震波傳遞時遇到高速帶，某些站會收到多次到時 ?</div>
+                        <div class="accordion-content">
+                            當波速隨深度增加過快時，射線會發生強烈彎曲（Triplication），導致同一震央距的接收站同時接收到在高速層上方傳遞及深部迴轉回來的波，形成走時曲線的迴圈。
+                        </div>
+                    </div>
+                    <!-- Q6 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">6. 為何地震波傳遞時遇到低速帶，某些站會收不到波 ?</div>
+                        <div class="accordion-content">
+                            遇到低速帶時，射線會向下方彎曲（遠離水平方向），導致射線被困在低速層內或向下偏折，在地表形成陰影區 (Shadow Zone)。
+                        </div>
+                    </div>
+                    <!-- Q7 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">7. 如何發現核幔邊界 (CMB) ?</div>
+                        <div class="accordion-content">
+                            透過觀測 S 波的消失與 P 波走時的大幅延遲發現。在約 2891 km 處，S 波無法進入液態外核，P 波速度驟降，形成 103° 到 143° 的陰影區。
+                        </div>
+                    </div>
+                    <!-- Q8 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">8. 各種體波波相介紹</div>
+                        <div class="accordion-content">
+                            P (縱波)、S (橫波)、PP/SS (地表反射波)、ScP/ScS (核幔邊界反射波) 等。
+                        </div>
+                    </div>
+                    <!-- Q9 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">9. core phases (核波相) 介紹</div>
+                        <div class="accordion-content">
+                            K (外核 P 波)、I (內核 P 波)、J (內核 S 波)。PKIKP 代表穿過地函、外核、內核再回到地表的 P 波。
+                        </div>
+                    </div>
+                    <!-- Q10 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">10. 甚麼是 antipodal focusing ?</div>
+                        <div class="accordion-content">
+                            當地震波傳遞到對跖點（180°）時，所有方向散發出的射線會在此重新會合，產生能量增強現象。
+                        </div>
+                    </div>
+                    <!-- Q11 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">11. 解釋 Upper mantle structure，低速帶與高速帶說明</div>
+                        <div class="accordion-content">
+                            低速帶 (LVZ) 位於軟流圈，與部分熔融有關；轉變帶位於 410-660 km，因礦物相變導致波速階梯式增高。
+                        </div>
+                    </div>
+                    <!-- Q12 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">12. 說明 Anisotropic earth structure</div>
+                        <div class="accordion-content">
+                            指地震波速隨傳播方向不同而改變，通常由礦物定向排列（如地函橄欖石）或週期性薄層構造引起。
+                        </div>
+                    </div>
+                    <!-- Q13 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">13. 說明剪力波分離 (S-wave splitting)</div>
+                        <div class="accordion-content">
+                            橫波進入非均向介質時分裂成快波與慢波，類似光學雙折射，是研究地函對流的重要工具。
+                        </div>
+                    </div>
+                    <!-- Q14 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">14. 為何使用 SKS 波相研究剪力波分離 ?</div>
+                        <div class="accordion-content">
+                            SKS 穿過外核時為 P 波，消除震源端影響，保證觀測到的分離現象僅來自接收站下方的地函。
+                        </div>
+                    </div>
+                    <!-- Q15 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">15. 解釋圖 3.6-1 與 3.6-7</div>
+                        <div class="accordion-content">
+                            3.6-1 展現 SH 與 SV 波速差異（通常 SH > SV）；3.6-7 展現全球剪力波非均向性分佈，反映地函對流模式。
+                        </div>
+                    </div>
+                    <!-- Q16 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">16. 波傳遞時能量如何衰減 ?</div>
+                        <div class="accordion-content">
+                            1. 幾何擴散。 2. 非彈性衰減（機械能轉熱能）。 3. 散射（不均勻體導致亂反射）。
                         </div>
                     </div>
                 </div>
@@ -695,6 +882,14 @@
                 card.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
                 card.style.opacity = '1'; card.style.transform = 'translateY(0)';
             }, 500 + index * 100);
+        });
+
+        // Accordion Logic
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
+            });
         });
     </script>
 </body>
