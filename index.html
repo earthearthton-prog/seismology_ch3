@@ -422,7 +422,7 @@
                             <p>精密成像地球內部構造的關鍵技術。</p>
                         </div>
                     </div>
-                    <div class="nav-card" onclick="alert('內容建置中...')">
+                    <div class="nav-card" onclick="showChapter('3_4')">
                         <div class="card-content">
                             <span class="chapter-num">3.4</span>
                             <h3>球形地球中的地震波</h3>
@@ -835,6 +835,50 @@
                 <h2>總結</h2>
                 <p>
                     3.3 節介紹了反射地震學從幾何光學路徑到複雜訊號處理的全貌。反射法不僅是一種測量深度的工具，更透過疊加、濾波與移位等數學手段，將雜亂的地震記錄轉化為清晰的地質切面。
+                </p>
+            </div>
+
+            <!-- Content for 3.4 -->
+            <div id="content-3_4" style="display:none">
+                <header>
+                    <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">3.4 球形地球中的地震波 (Seismic Waves in a Spherical Earth)</h1>
+                </header>
+
+                <h2>核心概念概述</h2>
+                <p>
+                    當觀測距離超過數百公里時，地球的曲率便不能再被忽略。3.4 節將平面分層理論擴展至球形對稱地球模型。在球形幾何中，斯耐爾定律（Snell's Law）與射線參數（Ray Parameter）具有不同的形式，這對於研究地球深部構造至關重要。
+                </p>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20224220.png" alt="球形地球射線路徑">
+                    <p class="image-caption">圖 3.4.1：球形地球中的射線傳播路徑。展示了射線參數 p = (r sin i) / v 在路徑上的不變性。隨著半徑 r 減小，若速度 v 增加，入射角 i 會增大直到發生轉向。</p>
+                </div>
+
+                <h2>球形幾何下的斯耐爾定律</h2>
+                <ul>
+                    <li><span class="highlight">射線參數 (p)</span>：定義為 p = (r sin i) / v。在球形對稱地球中，同一條射線路徑上的 p 保持不變。</li>
+                    <li><span class="highlight">最深點 (Bottoming Point)</span>：當入射角 i = 90° 時，射線達到最深處並開始轉向地面。</li>
+                    <li><span class="highlight">走時曲線斜率</span>：p = dT / dΔ，其中 Δ 是角距離（弧度）。</li>
+                </ul>
+
+                <h2>速度分佈對走時曲線的影響</h2>
+                <p>
+                    地球內部的速度分佈會導致複雜的走時現象：
+                </p>
+                <ul>
+                    <li><strong>三叉現象 (Triplication)</strong>：速度隨深度快速增加時（如轉變帶），會導致同一距離出現多個波相。</li>
+                    <li><strong>陰影區 (Shadow Zone)</strong>：低速層或核幔邊界會導致地表特定區域接收不到直接波。</li>
+                    <li><strong>焦散 (Caustics)</strong>：射線聚焦產生極大振幅訊號。</li>
+                </ul>
+
+                <h2>反演理論：Herglotz-Wiechert 積分</h2>
+                <p>
+                    透過著名的 <span class="highlight">Herglotz-Wiechert 積分</span>，科學家可以直接從觀測到的地表走時曲線 T(Δ) 反導出地球內部的速度隨半徑分佈 v(r)。這項技術揭示了地函轉變帶與地核的存在。
+                </p>
+
+                <h2>總結</h2>
+                <p>
+                    3.4 節建立了全球地震學的數學骨架。透過將射線理論與球形幾何結合，科學家不僅能預測波在地球深部的傳播軌跡，更能利用地表的觀測數據，「看穿」數千公里深的地下世界。
                 </p>
             </div>
         </div>
