@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>地震學互動教學網頁</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Orbitron:wght@400;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --bg-color: #0a0e14;
             --card-bg: rgba(255, 255, 255, 0.05);
-            --primary-color: #ff8c00; /* Seismic Orange */
-            --secondary-color: #00d2ff; /* Tech Blue */
+            --primary-color: #ff8c00;
+            /* Seismic Orange */
+            --secondary-color: #00d2ff;
+            /* Tech Blue */
             --text-color: #e0e0e0;
             --accent-glow: rgba(255, 140, 0, 0.4);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             background-color: var(--bg-color);
@@ -64,8 +73,12 @@
         }
 
         /* Glitch effect for title */
-        .glitch { position: relative; }
-        .glitch::before, .glitch::after {
+        .glitch {
+            position: relative;
+        }
+
+        .glitch::before,
+        .glitch::after {
             content: attr(data-text);
             position: absolute;
             top: 0;
@@ -73,24 +86,38 @@
             width: 100%;
             height: 100%;
         }
+
         .glitch::before {
             left: 2px;
             text-shadow: -2px 0 #ff00c1;
             clip: rect(44px, 450px, 56px, 0);
             animation: glitch-anim 5s infinite linear alternate-reverse;
         }
+
         .glitch::after {
             left: -2px;
             text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
             animation: glitch-anim2 1s infinite linear alternate-reverse;
         }
+
         @keyframes glitch-anim {
-            0% { clip: rect(31px, 9999px, 94px, 0); }
-            20% { clip: rect(62px, 9999px, 42px, 0); }
+            0% {
+                clip: rect(31px, 9999px, 94px, 0);
+            }
+
+            20% {
+                clip: rect(62px, 9999px, 42px, 0);
+            }
         }
+
         @keyframes glitch-anim2 {
-            0% { clip: rect(10px, 9999px, 85px, 0); }
-            100% { clip: rect(80px, 9999px, 20px, 0); }
+            0% {
+                clip: rect(10px, 9999px, 85px, 0);
+            }
+
+            100% {
+                clip: rect(80px, 9999px, 20px, 0);
+            }
         }
 
         /* Glassmorphism card */
@@ -151,7 +178,9 @@
             transition: opacity 0.4s ease;
         }
 
-        .nav-card:hover::before { opacity: 0.1; }
+        .nav-card:hover::before {
+            opacity: 0.1;
+        }
 
         .chapter-num {
             font-family: 'Orbitron', sans-serif;
@@ -202,7 +231,10 @@
             font-size: 1rem;
         }
 
-        .back-btn:hover { color: var(--primary-color); transform: translateX(-5px); }
+        .back-btn:hover {
+            color: var(--primary-color);
+            transform: translateX(-5px);
+        }
 
         #chapter-content h2 {
             color: var(--secondary-color);
@@ -212,9 +244,22 @@
             padding-left: 1rem;
         }
 
-        #chapter-content p { margin-bottom: 1.5rem; font-size: 1.1rem; color: #ccc; line-height: 1.8; }
-        #chapter-content ul { margin-bottom: 1.5rem; padding-left: 1.5rem; }
-        #chapter-content li { margin-bottom: 0.8rem; color: #ccc; }
+        #chapter-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        #chapter-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        #chapter-content li {
+            margin-bottom: 0.8rem;
+            color: #ccc;
+        }
 
         .image-container {
             text-align: center;
@@ -239,7 +284,10 @@
             font-size: 0.95rem;
         }
 
-        .highlight { color: var(--primary-color); font-weight: bold; }
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
 
         footer {
             text-align: center;
@@ -249,15 +297,24 @@
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .subtitle { font-size: 1.1rem; }
-            .glass-card { padding: 1.5rem; }
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .glass-card {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <canvas id="seismic-bg"></canvas>
-    
+
     <div id="home-view">
         <header>
             <div class="container">
@@ -286,7 +343,7 @@
                         </div>
                     </div>
                     <!-- 其他章節暫時保留原始連結或更新為點擊事件 -->
-                    <div class="nav-card" onclick="alert('內容建置中...')">
+                    <div class="nav-card" onclick="showChapter('3_2')">
                         <div class="card-content">
                             <span class="chapter-num">3.2</span>
                             <h3>折射地震學</h3>
@@ -345,7 +402,7 @@
         <div class="back-nav">
             <button class="back-btn" onclick="showHome()">← BACK TO HOME</button>
         </div>
-        
+
         <div id="chapter-content" class="glass-card">
             <!-- Content for 3.1 will be placed here -->
             <div id="content-3_1" style="display:none">
@@ -360,7 +417,8 @@
                 </p>
 
                 <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20212838.png" alt="地球內部構造示意圖">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20212838.png"
+                        alt="地球內部構造示意圖">
                     <p class="image-caption">圖 3.1.1：地球內部速度構造與界面示意圖。可以看到 P 波與 S 波在不同深度的速度變化，特別是在核幔邊界 (CMB) 的劇烈跳變。</p>
                 </div>
 
@@ -383,18 +441,174 @@
                 <h2>地球物理意義：正演與反演問題</h2>
                 <p>
                     1. <span class="highlight">正演問題 (Forward Problem)</span>：已知速度構造，計算地震波的走時與振幅。這通常較為簡單且結果唯一。<br>
-                    2. <span class="highlight">反演問題 (Inverse Problem)</span>：利用地表觀測到的走時與振幅來推求地下的速度構造。這是地震學研究的核心難點，因為反演結果往往具有不唯一性。
+                    2. <span class="highlight">反演問題 (Inverse
+                        Problem)</span>：利用地表觀測到的走時與振幅來推求地下的速度構造。這是地震學研究的核心難點，因為反演結果往往具有不唯一性。
                 </p>
 
                 <h2>研究路徑與模型演進</h2>
-                <p>
-                    本章節的研究邏輯遵循從簡單到複雜的模型演進：
-                </p>
                 <ul>
                     <li><strong>均勻等向性平舖半空間模型</strong>：處理短距離（地殼研究）。</li>
                     <li><strong>球形地球模型</strong>：考慮地球曲率，適用於遠震觀測。</li>
                     <li><strong>非均向性與非彈性性質</strong>：探討波速隨方向變化及能量衰減。</li>
                 </ul>
+            </div>
+
+            <!-- Content for 3.2 -->
+            <div id="content-3_2" style="display:none">
+                <header>
+                    <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">3.2 折射地震學 (Refraction Seismology)</h1>
+                </header>
+                
+                <h2>核心概念概述</h2>
+                <p>
+                    折射地震學是利用地震波在地下界面發生 <span class="highlight">臨界折射（Critical Refraction）</span> 後的「頭波」（Head Wave）來推求地層速度與厚度的方法。
+                    這是地震學中最經典的正反演應用之一，廣泛應用於地殼構造研究及工程勘探。
+                </p>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214537.png" alt="折射原理圖">
+                    <p class="image-caption">圖 3.2.1：惠更斯原理與波前示意圖。展示了波如何從點波源向外擴散。</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214551.png" alt="射線路徑圖">
+                    <p class="image-caption">圖 3.2.2：斯乃爾定律 (Snell's Law) 示意圖。波在穿過不同速度界面時的彎曲現象。</p>
+                </div>
+
+                <h2>基本理論：平舖層模型 (Flat Layer Method)</h2>
+                <p>
+                    在最簡單的模型中，假設地球是由水平分層的均勻介質組成，且下層速度大於上地層速度（v1 > v0）。當震源在表面激發時，會產生三種主要的射線路徑：
+                </p>
+                <ul>
+                    <li><span class="highlight">直接波 (Direct Wave)</span>：沿地表直接傳播，其走時曲線為過原點的直線，斜率為 1/v0。</li>
+                    <li><span class="highlight">反射波 (Reflected Wave)</span>：由界面反射回地面，其走時曲線為雙曲線。</li>
+                    <li><span class="highlight">頭波/折射波 (Head Wave)</span>：當入射角達到臨界角時，地震波沿界面下方傳播，其走時曲線為直線，斜率為 1/v1。</li>
+                </ul>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214609.png" alt="單層折射模型">
+                    <p class="image-caption">圖 3.2.3：單層覆蓋模型下的直接波、反射波與折射波路徑示意圖。</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214633.png" alt="走時曲線">
+                    <p class="image-caption">圖 3.2.4：對應的走時曲線圖 (Travel-time curves)。可以看到直接波直線與折射波直線的交會點。</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214653.png" alt="臨界角示意">
+                    <p class="image-caption">圖 3.2.5：臨界角與全反射現象的物理推導圖。</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214709.png" alt="截距時間">
+                    <p class="image-caption">圖 3.2.6：截距時間 (Intercept Time) 的定義與幾何解釋。</p>
+                </div>
+
+                <h2>莫氏不連續面 (The Moho)</h2>
+                <p>
+                    1909 年，莫霍洛維奇（A. Mohorovičić）透過分析地震折射數據，發現了地殼與地函的邊界。他觀察到兩組 P 波抵達：一組是沿地殼傳播的直接波（Pg），另一組是從較深的高速層（地函）折射回來的頭波（Pn）。
+                </p>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214719.png" alt="Moho 發現">
+                    <p class="image-caption">圖 3.2.7：莫氏不連續面發現的歷史數據與走時分析示意圖。</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214726.png" alt="Pn 波路徑">
+                    <p class="image-caption">圖 3.2.8：Pn 波與 Pg 波的傳播路徑對比圖。</p>
+                </div>
+
+                <h2>複雜構造的處理</h2>
+                <p>
+                    實際地下構造往往不是簡單的單層水平面，需要更複雜的模型處理：
+                </p>
+                
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214735.png" alt="多層模型">
+                    <p class="image-caption">圖 3.2.9：多層折射模型 (Multi-layered Model)。展示了波在多個界面間的傳播。</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214751.png" alt="多層公式">
+                    <p class="image-caption">圖 3.2.10：多層結構下的走時公式與數學推導過程。</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214805.png" alt="傾斜界面">
+                    <p class="image-caption">圖 3.2.11：傾斜界面模型 (Dipping Layer)。顯示了單向觀測會造成速度估計的誤差。</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214824.png" alt="反向觀測">
+                    <p class="image-caption">圖 3.2.12：反向觀測法 (Reversed Profiles) 示意圖，用於解算界面傾角。</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214834.png" alt="視速度公式">
+                    <p class="image-caption">圖 3.2.13：上坡與下坡方向的視速度計算公式。</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214848.png" alt="盲區示意">
+                    <p class="image-caption">圖 3.2.14：盲區 (Blind Zone) 現象示意。當薄層夾在中間時，其折射波不會成為首抵波。</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214900.png" alt="低速層">
+                    <p class="image-caption">圖 3.2.15：低速層 (Low-velocity Layer) 造成的射線彎曲與探測盲點示意。</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214914.png" alt="複雜地表修正">
+                    <p class="image-caption">圖 3.2.16：地形與地表非均勻性對走時數據的影響與修正方法。</p>
+                </div>
+
+                <h2>振幅與合成地震圖</h2>
+                <p>
+                    除了走時分析，振幅的變化也能提供重要資訊。合成地震圖（Synthetic Seismograms）被用來模擬複雜情況，以更精確地匹配觀測數據。
+                </p>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214944.png" alt="振幅變化">
+                    <p class="image-caption">圖 3.2.17：隨距離變化的振幅衰減與波形特徵分析。</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20214959.png" alt="合成地震圖">
+                    <p class="image-caption">圖 3.2.18：合成地震圖示例，展示了理論預測與實際觀測的對比。</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20215013.png" alt="能量分佈">
+                    <p class="image-caption">圖 3.2.19：射線追蹤與能量密度在介質中的分佈模擬圖。</p>
+                </div>
+
+                <h2>地質意義與岩石性質</h2>
+                <p>
+                    折射法不僅是量尺，更是人類理解地球組成的手段。
+                </p>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20215024.png" alt="海洋與大陸地殼">
+                    <p class="image-caption">圖 3.2.20：海洋與大陸地殼速度構造的對比圖。</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20215038.png" alt="岩石速度對比">
+                    <p class="image-caption">圖 3.2.21：不同類型岩石 (酸性、基性、超基性) 的地震波速範圍圖。</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20215050.png" alt="地殼剖面">
+                    <p class="image-caption">圖 3.2.22：區域性地殼構造剖面模型，結合了折射與重力數據。</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20215058.png" alt="地函模型">
+                    <p class="image-caption">圖 3.2.23：地函頂部與地殼底部過渡帶的速度梯度模型。</p>
+                </div>
             </div>
         </div>
     </div>
@@ -452,15 +666,15 @@
         function showChapter(id) {
             document.getElementById('home-view').style.display = 'none';
             document.getElementById('chapter-view').style.display = 'block';
-            
+
             // Hide all contents
             const contents = document.querySelectorAll('#chapter-content > div');
             contents.forEach(c => c.style.display = 'none');
-            
+
             // Show specific content
             const target = document.getElementById('content-' + id);
-            if(target) target.style.display = 'block';
-            
+            if (target) target.style.display = 'block';
+
             window.scrollTo(0, 0);
         }
 
@@ -484,4 +698,5 @@
         });
     </script>
 </body>
+
 </html>
