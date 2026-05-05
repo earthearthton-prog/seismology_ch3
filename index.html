@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>地震學互動教學網頁 - 首頁</title>
+    <title>地震學互動教學網頁</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
@@ -17,11 +17,7 @@
             --accent-glow: rgba(255, 140, 0, 0.4);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: var(--bg-color);
@@ -68,10 +64,7 @@
         }
 
         /* Glitch effect for title */
-        .glitch {
-            position: relative;
-        }
-
+        .glitch { position: relative; }
         .glitch::before, .glitch::after {
             content: attr(data-text);
             position: absolute;
@@ -80,25 +73,21 @@
             width: 100%;
             height: 100%;
         }
-
         .glitch::before {
             left: 2px;
             text-shadow: -2px 0 #ff00c1;
             clip: rect(44px, 450px, 56px, 0);
             animation: glitch-anim 5s infinite linear alternate-reverse;
         }
-
         .glitch::after {
             left: -2px;
             text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
             animation: glitch-anim2 1s infinite linear alternate-reverse;
         }
-
         @keyframes glitch-anim {
             0% { clip: rect(31px, 9999px, 94px, 0); }
             20% { clip: rect(62px, 9999px, 42px, 0); }
         }
-
         @keyframes glitch-anim2 {
             0% { clip: rect(10px, 9999px, 85px, 0); }
             100% { clip: rect(80px, 9999px, 20px, 0); }
@@ -141,6 +130,7 @@
             position: relative;
             overflow: hidden;
             display: block;
+            cursor: pointer;
         }
 
         .nav-card:hover {
@@ -161,9 +151,7 @@
             transition: opacity 0.4s ease;
         }
 
-        .nav-card:hover::before {
-            opacity: 0.1;
-        }
+        .nav-card:hover::before { opacity: 0.1; }
 
         .chapter-num {
             font-family: 'Orbitron', sans-serif;
@@ -188,6 +176,71 @@
             z-index: 1;
         }
 
+        /* Chapter View Specific Styles */
+        #chapter-view {
+            max-width: 900px;
+            margin: 0 auto;
+            display: none;
+        }
+
+        .back-nav {
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .back-btn {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .back-btn:hover { color: var(--primary-color); transform: translateX(-5px); }
+
+        #chapter-content h2 {
+            color: var(--secondary-color);
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+
+        #chapter-content p { margin-bottom: 1.5rem; font-size: 1.1rem; color: #ccc; line-height: 1.8; }
+        #chapter-content ul { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+        #chapter-content li { margin-bottom: 0.8rem; color: #ccc; }
+
+        .image-container {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--primary-color);
+            box-shadow: 0 0 20px rgba(255, 140, 0, 0.2);
+        }
+
+        .image-caption {
+            margin-top: 1rem;
+            font-style: italic;
+            color: var(--primary-color);
+            font-size: 0.95rem;
+        }
+
+        .highlight { color: var(--primary-color); font-weight: bold; }
+
         footer {
             text-align: center;
             padding: 4rem 0;
@@ -195,7 +248,6 @@
             font-size: 0.9rem;
         }
 
-        /* Mobile adjustments */
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .subtitle { font-size: 1.1rem; }
@@ -204,9 +256,9 @@
     </style>
 </head>
 <body>
-    <div id="app">
-        <canvas id="seismic-bg"></canvas>
-        
+    <canvas id="seismic-bg"></canvas>
+    
+    <div id="home-view">
         <header>
             <div class="container">
                 <h1 class="glitch" data-text="SEISMOLOGY">SEISMOLOGY</h1>
@@ -226,91 +278,140 @@
 
             <section id="navigation-grid">
                 <div class="grid">
-                    <!-- 3.1 -->
-                    <a href="chapter3_1.html" class="nav-card" id="card-3-1">
+                    <div class="nav-card" onclick="showChapter('3_1')">
                         <div class="card-content">
                             <span class="chapter-num">3.1</span>
                             <h3>簡介</h3>
                             <p>地震學基本應用與地球分層構造概述。</p>
                         </div>
-                    </a>
-                    <!-- 3.2 -->
-                    <a href="chapter3_2.html" class="nav-card" id="card-3-2">
+                    </div>
+                    <!-- 其他章節暫時保留原始連結或更新為點擊事件 -->
+                    <div class="nav-card" onclick="alert('內容建置中...')">
                         <div class="card-content">
                             <span class="chapter-num">3.2</span>
                             <h3>折射地震學</h3>
                             <p>利用折射波探測地殼厚度與速度分佈。</p>
                         </div>
-                    </a>
-                    <!-- 3.3 -->
-                    <a href="chapter3_3.html" class="nav-card" id="card-3-3">
+                    </div>
+                    <div class="nav-card" onclick="alert('內容建置中...')">
                         <div class="card-content">
                             <span class="chapter-num">3.3</span>
                             <h3>反射地震學</h3>
                             <p>精密成像地球內部構造的關鍵技術。</p>
                         </div>
-                    </a>
-                    <!-- 3.4 -->
-                    <a href="chapter3_4.html" class="nav-card" id="card-3-4">
+                    </div>
+                    <div class="nav-card" onclick="alert('內容建置中...')">
                         <div class="card-content">
                             <span class="chapter-num">3.4</span>
                             <h3>球形地球中的地震波</h3>
-                            <p>考慮地球曲率的地震波傳遞規規律。</p>
+                            <p>考慮地球曲率的地震波傳遞規律。</p>
                         </div>
-                    </a>
-                    <!-- 3.5 -->
-                    <a href="chapter3_5.html" class="nav-card" id="card-3-5">
+                    </div>
+                    <div class="nav-card" onclick="alert('內容建置中...')">
                         <div class="card-content">
                             <span class="chapter-num">3.5</span>
                             <h3>體波走時研究</h3>
                             <p>透過抵達時間精確定位震源與構造。</p>
                         </div>
-                    </a>
-                    <!-- 3.6 -->
-                    <a href="chapter3_6.html" class="nav-card" id="card-3-6">
+                    </div>
+                    <div class="nav-card" onclick="alert('內容建置中...')">
                         <div class="card-content">
                             <span class="chapter-num">3.6</span>
                             <h3>非均向性地球構造</h3>
                             <p>探討波速隨方向變化的物理現象。</p>
                         </div>
-                    </a>
-                    <!-- 3.7 -->
-                    <a href="chapter3_7.html" class="nav-card" id="card-3-7">
+                    </div>
+                    <div class="nav-card" onclick="alert('內容建置中...')">
                         <div class="card-content">
                             <span class="chapter-num">3.7</span>
                             <h3>衰減與非彈性</h3>
                             <p>能量在地球介質中的耗散與影響。</p>
                         </div>
-                    </a>
-                    <!-- 3.8 -->
-                    <a href="chapter3_8.html" class="nav-card" id="card-3-8">
+                    </div>
+                    <div class="nav-card" onclick="alert('內容建置中...')">
                         <div class="card-content">
                             <span class="chapter-num">3.8</span>
                             <h3>地函與地核的組成</h3>
                             <p>綜合數據解析地球深處的物質組成。</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </section>
         </main>
-
-        <footer>
-            <p>&copy; 2026 地震學互動教學網頁 - 基於課程摘要製作</p>
-        </footer>
     </div>
+
+    <!-- Chapter Content View -->
+    <div id="chapter-view" class="container">
+        <div class="back-nav">
+            <button class="back-btn" onclick="showHome()">← BACK TO HOME</button>
+        </div>
+        
+        <div id="chapter-content" class="glass-card">
+            <!-- Content for 3.1 will be placed here -->
+            <div id="content-3_1" style="display:none">
+                <header>
+                    <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">3.1 簡介 (Introduction)</h1>
+                </header>
+                <h2>核心概念概述</h2>
+                <p>
+                    地震學的主要應用之一是確定地球內部的 <span class="highlight">地震波速度分佈</span>，進而推導出地球各層的彈性性質。
+                    這種速度分佈被稱為「地球構造」（Earth Structure），它是約束地球內部礦物組成、化學成分、熱狀態與流變狀態的基本依據。
+                    相較於重力或磁力觀測，地震資料具有更高的解析力，能夠清晰地辨識出地球內部的重大界面。
+                </p>
+
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/earthearthton-prog/seismology_ch3/main/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-05-05%20212838.png" alt="地球內部構造示意圖">
+                    <p class="image-caption">圖 3.1.1：地球內部速度構造與界面示意圖。可以看到 P 波與 S 波在不同深度的速度變化，特別是在核幔邊界 (CMB) 的劇烈跳變。</p>
+                </div>
+
+                <h2>重要理論與觀測</h2>
+                <ul>
+                    <li>
+                        <span class="highlight">核幔邊界 (Core-Mantle Boundary, CMB)</span>：
+                        地震觀測顯示，在核幔邊界處物質性質發生劇烈變化。在邊界上方的固體地函中，P 波與 S 波皆可傳遞；但進入液態外核後，S 波無法傳遞，且 P 波速度大幅下降。
+                    </li>
+                    <li>
+                        <span class="highlight">地球的分層與分異作用</span>：
+                        地震學確立了地球的基本分層構造（地殼、地函、地核），這為「分異作用」（Differentiation）提供了直接證據。
+                    </li>
+                    <li>
+                        <span class="highlight">基本數據：走時 (Travel Times)</span>：
+                        研究地球內部構造最基本的數據是地震波的抵達時間。為了將抵達時間轉換為走時，必須精確已知震源的發生時間與位置。
+                    </li>
+                </ul>
+
+                <h2>地球物理意義：正演與反演問題</h2>
+                <p>
+                    1. <span class="highlight">正演問題 (Forward Problem)</span>：已知速度構造，計算地震波的走時與振幅。這通常較為簡單且結果唯一。<br>
+                    2. <span class="highlight">反演問題 (Inverse Problem)</span>：利用地表觀測到的走時與振幅來推求地下的速度構造。這是地震學研究的核心難點，因為反演結果往往具有不唯一性。
+                </p>
+
+                <h2>研究路徑與模型演進</h2>
+                <p>
+                    本章節的研究邏輯遵循從簡單到複雜的模型演進：
+                </p>
+                <ul>
+                    <li><strong>均勻等向性平舖半空間模型</strong>：處理短距離（地殼研究）。</li>
+                    <li><strong>球形地球模型</strong>：考慮地球曲率，適用於遠震觀測。</li>
+                    <li><strong>非均向性與非彈性性質</strong>：探討波速隨方向變化及能量衰減。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 地震學互動教學網頁 - 基於課程摘要製作</p>
+    </footer>
 
     <script>
         const canvas = document.getElementById('seismic-bg');
         const ctx = canvas.getContext('2d');
-
-        let width, height;
-        let pulses = [];
+        let width, height, pulses = [];
 
         function resize() {
             width = canvas.width = window.innerWidth;
             height = canvas.height = window.innerHeight;
         }
-
         window.addEventListener('resize', resize);
         resize();
 
@@ -324,60 +425,63 @@
                 this.speed = 0.5 + Math.random() * 1.5;
                 this.color = Math.random() > 0.5 ? '#ff8c00' : '#00d2ff';
             }
-
             update() {
                 this.radius += this.speed;
                 this.life = 1 - (this.radius / this.maxRadius);
             }
-
             draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.strokeStyle = this.color;
-                ctx.lineWidth = 1;
-                ctx.globalAlpha = this.life;
-                ctx.stroke();
-                ctx.closePath();
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.strokeStyle = this.color; ctx.lineWidth = 1; ctx.globalAlpha = this.life;
+                ctx.stroke(); ctx.closePath();
             }
         }
 
         function animate() {
             ctx.clearRect(0, 0, width, height);
-            
-            if (Math.random() < 0.05) {
-                pulses.push(new Pulse());
-            }
-
+            if (Math.random() < 0.05) pulses.push(new Pulse());
             pulses = pulses.filter(p => p.life > 0);
-
-            pulses.forEach(p => {
-                p.update();
-                p.draw();
-            });
-
+            pulses.forEach(p => { p.update(); p.draw(); });
             requestAnimationFrame(animate);
         }
 
         window.addEventListener('mousedown', (e) => {
-            for (let i = 0; i < 3; i++) {
-                pulses.push(new Pulse(e.clientX, e.clientY));
-            }
+            for (let i = 0; i < 3; i++) pulses.push(new Pulse(e.clientX, e.clientY));
         });
 
+        // Navigation Logic
+        function showChapter(id) {
+            document.getElementById('home-view').style.display = 'none';
+            document.getElementById('chapter-view').style.display = 'block';
+            
+            // Hide all contents
+            const contents = document.querySelectorAll('#chapter-content > div');
+            contents.forEach(c => c.style.display = 'none');
+            
+            // Show specific content
+            const target = document.getElementById('content-' + id);
+            if(target) target.style.display = 'block';
+            
+            window.scrollTo(0, 0);
+        }
+
+        function showHome() {
+            document.getElementById('home-view').style.display = 'block';
+            document.getElementById('chapter-view').style.display = 'none';
+            window.scrollTo(0, 0);
+        }
+
+        animate();
+
+        // Entrance animation
         const cards = document.querySelectorAll('.nav-card');
         cards.forEach((card, index) => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
-            
             setTimeout(() => {
                 card.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
+                card.style.opacity = '1'; card.style.transform = 'translateY(0)';
             }, 500 + index * 100);
         });
-
-        animate();
-        console.log('Seismology Portal Initialized');
     </script>
 </body>
 </html>
